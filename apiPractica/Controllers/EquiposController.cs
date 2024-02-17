@@ -22,9 +22,11 @@ namespace apiPractica.Controllers
             List<equipos> listadoEquipos = (from e in _equiposContext.equipos
                                             select e).ToList();
             
-            if (listadoEquipos.Count == 0) return NotFound();
+            if (listadoEquipos.Count == 0) return NotFound("No se encontraron Equipos");
 
             return Ok(listadoEquipos);
+
+
              
         }
 
